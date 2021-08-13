@@ -6,6 +6,7 @@ import cors from "cors";
 import hpp from "hpp";
 import path from "path";
 import rateLimit from "express-rate-limit";
+import passportManager from './config/passport';
 import morgan from "morgan";
 import mongoSanitize from "express-mongo-sanitize";
 import dotenv from "dotenv";
@@ -44,6 +45,7 @@ const limiter = rateLimit({
 app.use(limiter);
 // routes setup
 setRoutes(app);
+app.use(passportManager.initialize());
 // Catch all route
 app.use("*", (req, res) => {
   res.status(404).json({

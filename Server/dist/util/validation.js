@@ -9,10 +9,24 @@ var _require = require('express-validator'),
     validationResult = _require.validationResult,
     buildCheckFunction = _require.buildCheckFunction;
 
-var validateCustomersBody = function validateCustomersBody() {
-  return [body('fullName').exists().withMessage('fullName is required').isLength({
+var validateRegistrationBody = function validateRegistrationBody() {
+  return [body('fullName').trim().exists().withMessage('name field is required').isLength({
     min: 3
-  }).withMessage('name must be greater than 3 letters'), body('email').exists().withMessage('email is required...!').isEmail().withMessage('Email is invalid'), body('phone').optional().isInt(), body('address').exists().withMessage('address is required...!')];
+  }).withMessage('name must be greater than 3 letters'), body('email').exists().withMessage('email field is required').isEmail().withMessage('Email is invalid'), body('password').exists().withMessage('password field is required').isLength({
+    min: 8,
+    max: 12
+  }).withMessage('password must be in between 8 to 12 characters long')];
+};
+
+var validateLoginBody = function validateLoginBody() {
+  return [body('email').trim().exists().withMessage('email field is required').isEmail().withMessage('Email is invalid'), body('password').exists().withMessage('password field is required').isLength({
+    min: 8,
+    max: 12
+  }).withMessage('password must be in between 8 to 12 characters long')];
+};
+
+var Todovalidate = function Todovalidate() {
+  return [body('id').exists().withMessage('id is required'), body('item').exists().withMessage('item field is required')];
 };
 
 var validate = function validate(req, res, next) {
@@ -32,6 +46,8 @@ var validate = function validate(req, res, next) {
 };
 
 module.exports = {
-  validateCustomersBody: validateCustomersBody,
+  validateRegistrationBody: validateRegistrationBody,
+  validateLoginBody: validateLoginBody,
+  Todovalidate: Todovalidate,
   validate: validate
 };
