@@ -23,6 +23,8 @@ var _path = _interopRequireDefault(require("path"));
 
 var _expressRateLimit = _interopRequireDefault(require("express-rate-limit"));
 
+var _passport = _interopRequireDefault(require("./config/passport"));
+
 var _morgan = _interopRequireDefault(require("morgan"));
 
 var _expressMongoSanitize = _interopRequireDefault(require("express-mongo-sanitize"));
@@ -75,7 +77,8 @@ var limiter = (0, _expressRateLimit["default"])({
 });
 app.use(limiter); // routes setup
 
-(0, _routes["default"])(app); // Catch all route
+(0, _routes["default"])(app);
+app.use(_passport["default"].initialize()); // Catch all route
 
 app.use("*", function (req, res) {
   res.status(404).json({
