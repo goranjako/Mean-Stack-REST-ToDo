@@ -32,7 +32,8 @@ var Auth = /*#__PURE__*/function () {
 
   (0, _createClass2["default"])(Auth, [{
     key: "register",
-    value: function () {
+    value: //register
+    function () {
       var _register = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(req, res) {
         var newUser, user, token;
         return _regenerator["default"].wrap(function _callee$(_context) {
@@ -83,7 +84,7 @@ var Auth = /*#__PURE__*/function () {
                 _context.t0 = _context["catch"](0);
                 res.status(422).json({
                   success: false,
-                  message: "User already exists."
+                  msg: "User already exists."
                 });
 
               case 16:
@@ -99,7 +100,8 @@ var Auth = /*#__PURE__*/function () {
       }
 
       return register;
-    }()
+    }() //login
+
   }, {
     key: "login",
     value: function login(req, res) {
@@ -111,7 +113,7 @@ var Auth = /*#__PURE__*/function () {
         if (!user) {
           res.status(401).send({
             success: false,
-            message: 'Authentication failed. User not found.'
+            msg: "Authentication failed. User not found."
           });
         } else {
           // check if password matches
@@ -119,17 +121,18 @@ var Auth = /*#__PURE__*/function () {
             if (isMatch && !err) {
               // if user is found and password is right create a token
               var token = jwt.sign(user.toJSON(), process.env.SECRET_TOKEN, {
-                expiresIn: '10m'
+                expiresIn: "10m"
               }); // return the information including token as JSON
 
-              res.json({
+              return res.json({
                 success: true,
+                msg: 'Successful login',
                 token: token
               });
             } else {
-              res.status(422).send({
+              return res.status(422).send({
                 success: false,
-                message: 'Authentication failed. Wrong password.'
+                msg: "Authentication failed. Wrong password."
               });
             }
           });

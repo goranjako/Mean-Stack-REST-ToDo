@@ -88,7 +88,7 @@ app.use("*", function (req, res) {
 
 app.use(_errorHandler.notFound);
 app.use(_errorHandler.errorHandler);
-var port = process.env.PORT || 4000;
+var port = process.env.PORT || 3000;
 app.listen(port, function () {
   return console.log("server running on port ".concat(port, "..!!"));
 });

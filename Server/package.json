@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon --exec babel-node ./src/app.js",
     "build": "rimraf dist && babel ./src --out-dir dist ",
-    "start": "pm2 start ./dist/app.js "
+    "start": "pm2 start ./dist/app.js ",
+    "stop": "pm2 stop ./dist/app.js ",
+    "restart": "pm2 restart ./dist/app.js "
   },
   "repository": {
     "type": "git",

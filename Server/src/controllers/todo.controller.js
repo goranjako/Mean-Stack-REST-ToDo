@@ -12,9 +12,9 @@ class TodoController {
       const obj = await TodoService.addTodo(todo);
       return res
         .status(200)
-        .json({ success: true, message: "Todo is Created successfully." });
+        .json({ success: true, msg: "Todo is Created successfully." });
     } catch (err) {
-      res.status(422).json(err.message);
+      res.status(422).json(err.msg);
     }
   }
 
@@ -45,11 +45,11 @@ class TodoController {
       const custumer = await TodoService.update(id, data);
       return res
         .status(200)
-        .json({ success: true, message: " Todo is Updated successfully." });
+        .json({ success: true, msg: " Todo is Updated successfully." });
     } catch (err) {
       return res
         .status(400)
-        .json({ success: false, message: "Todo does not exist!" });
+        .json({ success: false, msg: "Todo does not exist!" });
     }
   }
   // Delete by id
@@ -58,12 +58,12 @@ class TodoController {
       await TodoService.delete({ _id: req.params.id });
       return res.json({
         success: true,
-        message: "Todo is Deleted successfully.",
+        msg: "Todo is Deleted successfully.",
       });
     } catch (err) {
       return res
         .status(400)
-        .json({ success: false, message: "Todo does not exist!" });
+        .json({ success: false, msg: "Todo does not exist!" });
     }
   }
 }

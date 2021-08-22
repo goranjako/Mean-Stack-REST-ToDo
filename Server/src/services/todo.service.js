@@ -4,7 +4,7 @@ class TodoService {
   //getById service
   static async getById(id) {
     try {
-      const todo = await Todo.find({ id: id });
+      const todo = await Todo.find({ id:id });
       return todo;
     } catch (error) {
       throw error;
