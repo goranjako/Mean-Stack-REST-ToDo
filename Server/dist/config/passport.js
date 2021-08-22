@@ -51,7 +51,7 @@ var passportManager = /*#__PURE__*/function () {
   }, {
     key: "authenticate",
     value: function authenticate(req, res, next) {
-      _passport["default"].authenticate('jwt', {
+      _passport["default"].authenticate("jwt", {
         session: false
       }, function (err, user, info) {
         if (err) {
@@ -66,7 +66,7 @@ var passportManager = /*#__PURE__*/function () {
           } else {
             return res.status(401).json({
               success: false,
-              msg: 'Unauthorized.'
+              msg: "Unauthorized."
             });
           }
         }

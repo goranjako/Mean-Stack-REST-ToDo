@@ -45,13 +45,13 @@ var TodoController = /*#__PURE__*/function () {
                 obj = _context.sent;
                 return _context.abrupt("return", res.status(200).json({
                   success: true,
-                  message: 'Todo is Created successfully.'
+                  msg: "Todo is Created successfully."
                 }));
 
               case 8:
                 _context.prev = 8;
                 _context.t0 = _context["catch"](0);
-                res.status(422).json(_context.t0.message);
+                res.status(422).json(_context.t0.msg);
 
               case 11:
               case "end":
@@ -93,30 +93,26 @@ var TodoController = /*#__PURE__*/function () {
 
               case 8:
                 return _context2.abrupt("return", res.status(400).json({
-                  error: 'Todo not found'
+                  error: "Todo not found"
                 }));
 
               case 9:
-                ;
-                _context2.next = 15;
+                _context2.next = 14;
                 break;
 
-              case 12:
-                _context2.prev = 12;
+              case 11:
+                _context2.prev = 11;
                 _context2.t0 = _context2["catch"](0);
                 return _context2.abrupt("return", res.status(400).json({
-                  error: 'Todo not found'
+                  error: "Todo not found"
                 }));
 
-              case 15:
-                ;
-
-              case 16:
+              case 14:
               case "end":
                 return _context2.stop();
             }
           }
-        }, _callee2, null, [[0, 12]]);
+        }, _callee2, null, [[0, 11]]);
       }));
 
       function getById(_x4, _x5) {
@@ -149,7 +145,7 @@ var TodoController = /*#__PURE__*/function () {
                 custumer = _context3.sent;
                 return _context3.abrupt("return", res.status(200).json({
                   success: true,
-                  message: ' Todo is Updated successfully.'
+                  msg: " Todo is Updated successfully."
                 }));
 
               case 9:
@@ -157,7 +153,7 @@ var TodoController = /*#__PURE__*/function () {
                 _context3.t0 = _context3["catch"](2);
                 return _context3.abrupt("return", res.status(400).json({
                   success: false,
-                  message: 'Todo does not exist!'
+                  msg: "Todo does not exist!"
                 }));
 
               case 12:
@@ -192,7 +188,7 @@ var TodoController = /*#__PURE__*/function () {
               case 3:
                 return _context4.abrupt("return", res.json({
                   success: true,
-                  message: 'Todo is Deleted successfully.'
+                  msg: "Todo is Deleted successfully."
                 }));
 
               case 6:
@@ -200,7 +196,7 @@ var TodoController = /*#__PURE__*/function () {
                 _context4.t0 = _context4["catch"](0);
                 return _context4.abrupt("return", res.status(400).json({
                   success: false,
-                  message: 'Todo does not exist!'
+                  msg: "Todo does not exist!"
                 }));
 
               case 9:

@@ -24,7 +24,8 @@ var TodoService = /*#__PURE__*/function () {
 
   (0, _createClass2["default"])(TodoService, null, [{
     key: "getById",
-    value: function () {
+    value: //getById service
+    function () {
       var _getById = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(id) {
         var todo;
         return _regenerator["default"].wrap(function _callee$(_context) {
@@ -59,7 +60,8 @@ var TodoService = /*#__PURE__*/function () {
       }
 
       return getById;
-    }()
+    }() //addTodo service
+
   }, {
     key: "addTodo",
     value: function () {
@@ -95,7 +97,8 @@ var TodoService = /*#__PURE__*/function () {
       }
 
       return addTodo;
-    }()
+    }() //update service
+
   }, {
     key: "update",
     value: function () {
@@ -139,7 +142,8 @@ var TodoService = /*#__PURE__*/function () {
       }
 
       return update;
-    }()
+    }() //delete service
+
   }, {
     key: "delete",
     value: function () {

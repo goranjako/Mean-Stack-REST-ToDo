@@ -29,7 +29,7 @@ class Auth {
         });
       }
     } catch (err) {
-      res.status(422).json({ success: false, message: "User already exists." });
+      res.status(422).json({ success: false, msg: "User already exists." });
     }
   }
   //login
@@ -47,24 +47,24 @@ class Auth {
             .status(401)
             .send({
               success: false,
-              message: "Authentication failed. User not found.",
+              msg: "Authentication failed. User not found.",
             });
         } else {
           // check if password matches
           user.comparePassword(req.body.password, (err, isMatch) => {
             if (isMatch && !err) {
               // if user is found and password is right create a token
-              var token = jwt.sign(user.toJSON(), process.env.SECRET_TOKEN, {
+              const token = jwt.sign(user.toJSON(), process.env.SECRET_TOKEN, {
                 expiresIn: "10m",
               });
               // return the information including token as JSON
-              res.json({ success: true, token: token });
+             return  res.json({success: true, msg:'Successful login', token: token});
             } else {
-              res
+            return  res
                 .status(422)
                 .send({
                   success: false,
-                  message: "Authentication failed. Wrong password.",
+                  msg: "Authentication failed. Wrong password.",
                 });
             }
           });

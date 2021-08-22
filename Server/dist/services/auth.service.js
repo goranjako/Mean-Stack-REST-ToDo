@@ -26,7 +26,8 @@ var AuthService = /*#__PURE__*/function () {
 
   (0, _createClass2["default"])(AuthService, null, [{
     key: "register",
-    value: function () {
+    value: //reister service
+    function () {
       var _register = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(data) {
         var user, obj;
         return _regenerator["default"].wrap(function _callee$(_context) {
