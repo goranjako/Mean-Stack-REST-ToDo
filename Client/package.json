@@ -4,8 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "lite-server --baseDir=dist/client/",
-    "build": "ng build --prod",
-    "test": "ng test",
+    "build": "ng build --prod --aot --build-optimizer --common-chunk  ",
+    "test": "ng serve",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },

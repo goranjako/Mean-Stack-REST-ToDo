@@ -4,8 +4,8 @@
 
 export const environment = {
   production: true,
-   apiUrl : 'http://localhost:3000',
-   todoUrl: 'http://localhost:3000/todo'
+   apiUrl : 'http://localhost:4000',
+   todoUrl: 'http://localhost:4000/todo'
 };
 
 /*
