@@ -7,6 +7,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { Interceptor } from '../auth/.interceptor';
 
 
 
@@ -20,6 +21,7 @@ TodoComponent
     FormsModule, ReactiveFormsModule, SweetAlert2Module.forRoot(),NgxSpinnerModule,
     MDBBootstrapModule.forRoot(),HttpClientModule
 
-  ]
+  ],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true }]
 })
 export class TodoModule { }
